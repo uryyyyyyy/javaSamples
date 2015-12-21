@@ -17,4 +17,4 @@ include 'services:webservice'
 */
 
 rootProject.name = 'javaSamples'
-include 'javaIO', 'apacheUtils'
+include 'javaIO', 'apacheUtils', 'gson', 'selenium'
