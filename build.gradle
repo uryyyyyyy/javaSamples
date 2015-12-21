@@ -22,6 +22,14 @@ project(':jbCrypt') {
     }
 }
 
+project(':poi') {
+    apply plugin: 'java'
+    dependencies {
+        compile 'org.apache.poi:poi:3.13'
+        testCompile 'junit:junit:4.12'
+    }
+}
+
 project(':gson') {
     apply plugin: 'java'
     dependencies {
