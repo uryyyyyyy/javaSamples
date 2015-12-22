@@ -51,7 +51,32 @@ project(':apacheUtils') {
 
     dependencies {
         testCompile 'junit:junit:4.12'
-        compile project(':javaIO')
+    }
+}
+
+project(':rmiObject') {
+    apply plugin: 'java'
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+    }
+}
+
+project(':rmiServer') {
+    apply plugin: 'java'
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        compile project(':rmiObject')
+    }
+}
+
+project(':rmiClient') {
+    apply plugin: 'java'
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        compile project(':rmiObject')
     }
 }
 
