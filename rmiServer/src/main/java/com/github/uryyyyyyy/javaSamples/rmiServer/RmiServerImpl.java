@@ -28,8 +28,8 @@ public class RmiServerImpl {
     }
 
     public void start() throws RemoteException, MalformedURLException{
-        //start(host, port, serverName, remoteObject);
-        startViaProcess(host, port, serverName, remoteObject);
+        start(host, port, serverName, remoteObject);
+        //startViaProcess(host, port, serverName, remoteObject);
     }
 
     public static void main(String[] args){

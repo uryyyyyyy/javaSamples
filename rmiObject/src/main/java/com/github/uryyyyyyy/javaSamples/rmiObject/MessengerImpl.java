@@ -11,4 +11,9 @@ public class MessengerImpl extends UnicastRemoteObject implements Messenger{
 
     private static final long serialVersionUID = 1L;
 
+    @Override
+    public String send(String message) throws RemoteException {
+        System.out.println("client says \"" + message + "\".");
+        return "send \"" + message + "\" to server.";
+    }
 }

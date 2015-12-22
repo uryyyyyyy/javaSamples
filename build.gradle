@@ -3,10 +3,12 @@ subprojects {
     repositories {
         mavenCentral()
     }
+    apply plugin: 'java'
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 }
 
 project(':javaIO') {
-    apply plugin: 'java'
     apply plugin:'application'
     mainClassName = "com.github.uryyyyyyy.javaSamples.javaIO.Main"
     dependencies {
@@ -15,7 +17,6 @@ project(':javaIO') {
 }
 
 project(':jbCrypt') {
-    apply plugin: 'java'
     dependencies {
         compile 'org.mindrot:jbcrypt:0.3m'
         testCompile 'junit:junit:4.12'
@@ -23,7 +24,6 @@ project(':jbCrypt') {
 }
 
 project(':poi') {
-    apply plugin: 'java'
     dependencies {
         compile 'org.apache.poi:poi:3.13'
         testCompile 'junit:junit:4.12'
@@ -31,7 +31,6 @@ project(':poi') {
 }
 
 project(':gson') {
-    apply plugin: 'java'
     dependencies {
         compile 'com.google.code.gson:gson:2.5'
         testCompile 'junit:junit:4.12'
@@ -39,7 +38,6 @@ project(':gson') {
 }
 
 project(':selenium') {
-    apply plugin: 'java'
     dependencies {
         compile 'org.seleniumhq.selenium:selenium-java:2.48.2'
         testCompile 'junit:junit:4.12'
@@ -47,24 +45,18 @@ project(':selenium') {
 }
 
 project(':apacheUtils') {
-    apply plugin: 'java'
-
     dependencies {
         testCompile 'junit:junit:4.12'
     }
 }
 
 project(':rmiObject') {
-    apply plugin: 'java'
-
     dependencies {
         testCompile 'junit:junit:4.12'
     }
 }
 
 project(':rmiServer') {
-    apply plugin: 'java'
-
     dependencies {
         testCompile 'junit:junit:4.12'
         compile project(':rmiObject')
@@ -72,8 +64,6 @@ project(':rmiServer') {
 }
 
 project(':rmiClient') {
-    apply plugin: 'java'
-
     dependencies {
         testCompile 'junit:junit:4.12'
         compile project(':rmiObject')

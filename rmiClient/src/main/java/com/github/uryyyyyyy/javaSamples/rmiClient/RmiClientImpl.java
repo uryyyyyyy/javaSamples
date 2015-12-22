@@ -27,8 +27,8 @@ public class RmiClientImpl {
     }
 
     public Remote lookup() throws RemoteException, NotBoundException, MalformedURLException{
-        //return lookup(host, port, serverName);
-        return lookupViaProcess(host, port, serverName);
+        return lookup(host, port, serverName);
+        //return lookupViaProcess(host, port, serverName);
     }
 
     public static void main(String[] args){
