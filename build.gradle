@@ -70,6 +70,37 @@ project(':rmiClient') {
     }
 }
 
+project(':awsSdk') {
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        compile "com.amazonaws:aws-java-sdk:1.10.38"
+    }
+}
+
+project(':gsCollection') {
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        compile 'com.goldmansachs:gs-collections-api:7.0.0'
+        compile 'com.goldmansachs:gs-collections:7.0.0'
+        testCompile 'com.goldmansachs:gs-collections-testutils:7.0.0'
+        compile 'com.goldmansachs:gs-collections-forkjoin:7.0.0'
+    }
+}
+
+project(':akka') {
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        compile 'com.typesafe.akka:akka-actor_2.11:2.3.14'
+    }
+}
+
+project(':rxJava') {
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        compile 'io.reactivex:rxjava:1.1.0'
+    }
+}
+
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
     gradleVersion = '2.9'

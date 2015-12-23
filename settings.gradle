@@ -17,4 +17,6 @@ include 'services:webservice'
 */
 
 rootProject.name = 'javaSamples'
-include 'javaIO', 'apacheUtils', 'gson', 'selenium', 'jbCrypt', 'poi', 'rmiServer', 'rmiClient', 'rmiObject'
+include 'javaIO', 'apacheUtils', 'gson', 'selenium',
+        'jbCrypt', 'poi', 'rmiServer', 'rmiClient', 'rmiObject',
+        'awsSdk', 'gsCollection', 'rxJava', 'akka'
