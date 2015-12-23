@@ -1,4 +1,4 @@
-package com.github.uryyyyyyy.javaSamples.javaIO;
+package com.github.uryyyyyyy.javaSamples.springJdbc;
 
 import org.junit.Test;
 
@@ -8,7 +8,5 @@ public class LibraryTest {
 
     @Test
     public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
 }
