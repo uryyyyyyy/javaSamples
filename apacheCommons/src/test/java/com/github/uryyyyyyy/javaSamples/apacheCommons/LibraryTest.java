@@ -1,4 +1,4 @@
-package com.github.uryyyyyyy.javaSamples.apacheUtils;
+package com.github.uryyyyyyy.javaSamples.apacheCommons;
 
 import org.junit.Test;
 
