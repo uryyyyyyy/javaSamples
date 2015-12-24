@@ -166,6 +166,13 @@ project(':commonsLang') {
     }
 }
 
+project(':geoip2') {
+    dependencies {
+        compile 'com.maxmind.geoip2:geoip2:2.4.0'
+    }
+}
+
+
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
     gradleVersion = '2.9'
