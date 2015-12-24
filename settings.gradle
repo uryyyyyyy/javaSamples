@@ -20,4 +20,4 @@ rootProject.name = 'javaSamples'
 include 'javaIO', 'apacheCommons', 'gson', 'selenium',
         'jbCrypt', 'poi', 'rmiServer', 'rmiClient', 'rmiObject',
         'awsSdk', 'gsCollection', 'rxJava', 'akka', 'javaLang',
-        'jodatime', 'ldap', 'springJdbc', 'awt'
+        'jodatime', 'ldap', 'springJdbc', 'awt', 'commonsIO', 'commonsLang', 'httpclient'
