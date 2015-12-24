@@ -2,6 +2,7 @@ package com.github.uryyyyyyy.javaSamples.commonsLang;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
@@ -36,6 +37,12 @@ public class LibraryTest {
 		String[] acceptFormats = { "yyyy-MM-dd" };
 		Date d = DateUtils.parseDateStrictly("2013-04-32", acceptFormats);
 		System.out.println(d);
+	}
+
+	@Test
+	public void testNumberUtils() {
+		boolean b1 = NumberUtils.isDigits("12345");
+		System.out.println(b1);
 	}
 
 }
