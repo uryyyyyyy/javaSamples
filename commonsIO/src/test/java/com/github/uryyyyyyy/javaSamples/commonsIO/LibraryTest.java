@@ -2,10 +2,12 @@ package com.github.uryyyyyyy.javaSamples.commonsIO;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
 
+@Ignore
 public class LibraryTest {
 
 	@Test
