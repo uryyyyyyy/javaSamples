@@ -197,6 +197,12 @@ project(':hystrix') {
     }
 }
 
+project(':thrift') {
+    dependencies {
+        compile 'org.apache.thrift:libthrift:0.9.3'
+    }
+}
+
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
     gradleVersion = '2.9'
