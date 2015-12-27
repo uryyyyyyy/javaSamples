@@ -178,6 +178,13 @@ project(':config') {
     }
 }
 
+project(':sparkFW') {
+    dependencies {
+        compile 'com.sparkjava:spark-core:2.3'
+        compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
+        compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
+    }
+}
 
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
