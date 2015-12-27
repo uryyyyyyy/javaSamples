@@ -23,6 +23,17 @@ import static org.junit.Assert.assertTrue;
 public class LibraryTest {
 
 	@Test
+	public void testSimpleMethod() throws IOException {
+		HttpClient httpClient = HttpClientBuilder.create().build();
+		HttpGet httpGet = new HttpGet("http://qiita.com/uryyyyyyy");
+		HttpResponse response = httpClient.execute(httpGet);
+		int responseStatus = response.getStatusLine().getStatusCode();
+		System.out.println(responseStatus);
+		String body = EntityUtils.toString(response.getEntity(), "UTF-8");
+		System.out.println(body);
+	}
+
+	@Test
 	public void testSomeLibraryMethod() throws IOException {
 		// configurations
 		int socketTimeout = 3000;

@@ -11,7 +11,7 @@ public class Sample2_1{
         try {
             exec();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
