@@ -17,7 +17,7 @@ public class EmailSample {
 			mail.setMsg("mail content");
 			mail.send();
 		}catch (EmailException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 }

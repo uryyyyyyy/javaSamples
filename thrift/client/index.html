@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Thrift Javascript Bindings - Tutorial Example</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="thrift.js"></script>
+    <script type="text/javascript" src="../gen-js/tutorial_types.js"></script>
+    <script type="text/javascript" src="../gen-js/shared_types.js"></script>
+    <script type="text/javascript" src="../gen-js/SharedService.js"></script>
+    <script type="text/javascript" src="../gen-js/Calculator.js"></script>
+    <script type="text/javascript" src="sample.js"></script>
+
+</head>
+<body>
+<h2>Thrift Javascript Bindings</h2>
+<form action="">
+    <table class="calculator">
+        <tr>
+            <td>num1</td>
+            <td><input type="text" id="num1" value="20" onkeyup="javascript:auto_calc();"/></td>
+        </tr>
+        <tr>
+            <td>Operation</td>
+            <td><select id="op" size="1" onchange="javascript:auto_calc();"><option></option></select></td>
+        </tr>
+        <tr>
+            <td>num2</td>
+            <td><input type="text" id="num2" value="5" onkeyup="javascript:auto_calc();"/></td></tr>
+        <tr>
+            <td>result</td>
+            <td><input type="text" id="result" value=""/></td></tr>
+        <tr>
+            <td><input type="checkbox" id="autoupdate" checked="checked"/>autoupdate</td>
+            <td><input type="button" id="calculate" value="calculate" onclick="javascript:calc();"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

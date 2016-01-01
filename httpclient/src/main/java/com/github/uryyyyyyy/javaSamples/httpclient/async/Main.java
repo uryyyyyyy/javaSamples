@@ -15,5 +15,6 @@ public class Main {
 		System.out.println(r.getStatusCode());
 		System.out.println(r.getContentType());
 		System.out.println(r.getResponseBody());
+		asyncHttpClient.close();
 	}
 }

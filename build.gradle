@@ -1,4 +1,8 @@
 
+plugins {
+    id "org.sonarqube" version "1.1"
+}
+
 subprojects {
     repositories {
         mavenCentral()
@@ -187,6 +191,25 @@ project(':ebeans') {
     }
 }
 
+project(':sparkFW') {
+    dependencies {
+        compile 'com.sparkjava:spark-core:2.3'
+        compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
+        compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
+    }
+}
+
+project(':hystrix') {
+    dependencies {
+        compile 'com.netflix.hystrix:hystrix-core:1.4.21'
+    }
+}
+
+project(':thrift') {
+    dependencies {
+        compile 'org.apache.thrift:libthrift:0.9.3'
+    }
+}
 
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
