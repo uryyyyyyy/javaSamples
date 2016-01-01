@@ -179,6 +179,14 @@ project(':config') {
     }
 }
 
+project(':ebeans') {
+    dependencies {
+        compile 'org.avaje.ebeanorm:avaje-ebeanorm:6.13.5'
+        compile 'org.avaje:avaje-agentloader:2.1.2'
+        compile 'org.avaje.ebeanorm:avaje-ebeanorm-agent:4.8.1'
+    }
+}
+
 
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
