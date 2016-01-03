@@ -1,24 +1,49 @@
 package com.github.uryyyyyyy.javaSamples.ebeans;
 
-import com.typesafe.config.Config;
-import com.typesafe.config.ConfigFactory;
-
-import java.io.IOException;
-import java.util.List;
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.EbeanServer;
 
 public class Main {
 
 
-	public static void main(String[] args) throws IOException {
-		Config config = ConfigFactory.load("application.conf");
-		int s = config.getInt("foo.bar");
-		System.out.println(s);
+	public static void main(String[] args) {
+		EbeanServer server = Ebean.getServer("h2");
+		insert(server);
+		update(server);
+		delete(server);
+//		select(server);
+	}
 
-		Config ss = config.getConfig("foo");
-		System.out.println(ss);
+	private static void delete(EbeanServer server) {
+		server.execute(() -> {
 
-		List<String> sss = config.getStringList("foo.list");
-		System.out.println(sss);
+			// delete
+			Customer customer = Ebean.find(Customer.class, 4);
+			Ebean.delete(customer);
+
+			// sql bulk update uses table and column names
+			server.createSqlUpdate("delete from o_country").execute();
+		});
+	}
+
+	private static void update(EbeanServer server) {
+		server.execute(() -> {
+			Customer customer = server.find(Customer.class, 4);
+			customer.name = "New updated name";
+			Ebean.save(customer);
+		});
+	}
+
+	private static void select(EbeanServer server) {
+		Customer customer1 = server.find(Customer.class, 4);
+		System.out.println(customer1);
+	}
+
+	private static void insert(EbeanServer server) {
+		server.execute(() -> {
+			Customer customer = new Customer("name", "comment");
+			server.save(customer);
+		});
 	}
 
 }

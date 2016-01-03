@@ -188,6 +188,7 @@ project(':ebeans') {
         compile 'org.avaje.ebeanorm:avaje-ebeanorm:6.13.5'
         compile 'org.avaje:avaje-agentloader:2.1.2'
         compile 'org.avaje.ebeanorm:avaje-ebeanorm-agent:4.8.1'
+        compile 'com.h2database:h2:1.4.186'
     }
 }
 
