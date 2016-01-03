@@ -1,4 +1,4 @@
-package com.github.uryyyyyyy.javaSamples.geoIp;
+package com.github.uryyyyyyy.javaSamples.elasticsearch;
 
 import org.junit.Test;
 
