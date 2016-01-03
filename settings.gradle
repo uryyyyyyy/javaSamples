@@ -22,4 +22,4 @@ include 'javaIO', 'apacheCommons', 'gson', 'selenium',
         'awsSdk', 'gsCollection', 'rxJava', 'akka', 'javaLang',
         'jodatime', 'ldap', 'springJdbc', 'awt', 'commonsIO',
         'commonsLang', 'httpclient', 'geoip2', 'config', 'sparkFW',
-        'hystrix', 'thrift'
+        'hystrix', 'thrift', 'git', 'elasticsearch'

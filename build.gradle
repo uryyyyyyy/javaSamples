@@ -203,6 +203,18 @@ project(':thrift') {
     }
 }
 
+project(':git') {
+    dependencies {
+        compile 'org.eclipse.jgit:org.eclipse.jgit:4.1.1.201511131810-r'
+    }
+}
+
+project(':elasticsearch') {
+    dependencies {
+        compile 'org.elasticsearch:elasticsearch:2.1.1'
+    }
+}
+
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
     gradleVersion = '2.9'
