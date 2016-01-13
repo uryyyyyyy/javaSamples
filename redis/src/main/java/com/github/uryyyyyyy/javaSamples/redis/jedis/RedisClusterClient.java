@@ -1,4 +1,4 @@
-package com.github.uryyyyyyy.javaSamples.jedis;
+package com.github.uryyyyyyy.javaSamples.redis.jedis;
 
 import redis.clients.jedis.*;
 

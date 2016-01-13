@@ -1,4 +1,4 @@
-package com.github.uryyyyyyy.javaSamples.jedis;
+package com.github.uryyyyyyy.javaSamples.redis.jedis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -7,7 +7,7 @@ import redis.clients.jedis.JedisPoolConfig;
 public class RedisClient {
 
     public static void main(String[] args) {
-        JedisPool pool = new JedisPool(new JedisPoolConfig(), "172.17.0.5");
+        JedisPool pool = new JedisPool(new JedisPoolConfig(), "172.17.0.2");
         try (Jedis jedis = pool.getResource()) {
             jedis.set("mykey", "Hello");
             System.out.println(jedis.keys("*"));
@@ -22,7 +22,7 @@ public class RedisClient {
 
             // 1秒待機
             System.out.println("Thread.sleep(1000)......");
-            try { Thread.sleep(10000);}
+            try { Thread.sleep(1000);}
             catch (InterruptedException e) {e.printStackTrace();}
 
             // Keyの有効期限を取得
