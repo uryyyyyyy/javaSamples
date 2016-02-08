@@ -23,4 +23,4 @@ include 'javaIO', 'apacheCommons', 'gson', 'selenium',
         'jodatime', 'ldap', 'springJdbc', 'awt', 'commonsIO',
         'commonsLang', 'httpclient', 'geoip2', 'config', 'sparkFW',
         'ebeans', 'sparkFW', 'hystrix', 'thrift', 'git', 'elasticsearch',
-        'jooq', 'redis', 'jmh'
+        'jooq', 'kryo', 'thread'
