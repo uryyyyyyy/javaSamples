@@ -244,6 +244,12 @@ project(':ircServer') {
 }
 
 
+project(':jmh') {
+    dependencies {
+        compile 'org.openjdk.jmh:jmh-core:1.11.3'
+    }
+}
+
 //you can use `gradle wrapper` and gradlew
 task wrapper(type: Wrapper) {
     gradleVersion = '2.9'

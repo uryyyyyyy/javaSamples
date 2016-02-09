@@ -1,60 +1,65 @@
 package com.github.uryyyyyyy.javaSamples.thread;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class Main {
 
-    public static void main(String args[]) throws ExecutionException, InterruptedException {
-        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+	public static void main(String args[]) throws ExecutionException, InterruptedException {
+
+		showActiveThread();
+		ScheduledExecutorService service = Executors.newScheduledThreadPool(3);
 //        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+		showActiveThread();
 
-        hello(service);
+		hello(service);
+		showActiveThread();
 
-        int res = hello2(service).get();
-        System.out.println(res);
+		int res = hello2(service).get();
+		System.out.println(res);
 
-        hello3(service);
+		hello3(service);
 
-        service.shutdown();
-    }
+		showActiveThread();
+		service.shutdown();
+		showActiveThread();
+	}
 
-    private static void hello3(ScheduledExecutorService service) {
-        service.scheduleWithFixedDelay(new Runnable() {
-            public void run() {
-                System.out.println("Thread:" + Thread.currentThread().getId());
-            }
-        }, 0, 1, TimeUnit.SECONDS);
-        sleep(5000);
-    }
+	private static void showActiveThread() {
+		System.out.println("Thread num: " + Thread.activeCount());
+	}
 
-    private static void sleep(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+	private static void hello3(ScheduledExecutorService service) {
+		service.scheduleWithFixedDelay(new Runnable() {
+			public void run() {
+				System.out.println("Thread:" + Thread.currentThread().getId());
+			}
+		}, 0, 1, TimeUnit.SECONDS);
+		sleep(5000);
+	}
 
-    private static void hello(ScheduledExecutorService service) {
-        ScheduledFuture<?> future = service.schedule(new Runnable() {
-            public void run() {
-                System.out.println("Thread:" + Thread.currentThread().getId());
-                sleep(1000);
-            }
-        }, 1, TimeUnit.SECONDS);
-    }
+	private static void sleep(long millis) {
+		try {
+			Thread.sleep(millis);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 
-    private static ScheduledFuture<Integer> hello2(ScheduledExecutorService service) {
-        return service.schedule(new Callable<Integer>() {
-            public Integer call() throws Exception {
-                System.out.println("Thread:" + Thread.currentThread().getId());
-                return 5;
-            }
-        }, 1, TimeUnit.SECONDS);
-    }
+	private static void hello(ScheduledExecutorService service) {
+		ScheduledFuture<?> future = service.schedule(new Runnable() {
+			public void run() {
+				System.out.println("Thread:" + Thread.currentThread().getId());
+				sleep(1000);
+			}
+		}, 1, TimeUnit.SECONDS);
+	}
+
+	private static ScheduledFuture<Integer> hello2(ScheduledExecutorService service) {
+		return service.schedule(new Callable<Integer>() {
+			public Integer call() throws Exception {
+				System.out.println("Thread:" + Thread.currentThread().getId());
+				return 5;
+			}
+		}, 1, TimeUnit.SECONDS);
+	}
 }
